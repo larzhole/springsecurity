@@ -10,7 +10,7 @@ public interface HelloService {
 
     Hello addHello(Hello hello);
 
-    void updateHello(Hello hello, Long id) throws HelloNotFoundException;
+    void updateHello(Long id, Hello hello) throws HelloNotFoundException;
 
     void deleteHello(Long id) throws HelloNotFoundException;
 

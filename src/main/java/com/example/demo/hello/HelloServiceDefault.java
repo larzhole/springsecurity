@@ -30,7 +30,7 @@ public class HelloServiceDefault implements HelloService {
     }
 
     @Override
-    public void updateHello(Hello hello, Long id) throws HelloNotFoundException {
+    public void updateHello(Long id, Hello hello) throws HelloNotFoundException {
         checkIfExistsById(id);
         hello.setHelloId(id);
         helloRepository.save(hello);
