@@ -17,7 +17,7 @@ import javax.validation.constraints.NotNull;
 
 @CrossOrigin
 @RestController
-@RequestMapping(path = "/api/v1/hello")
+@RequestMapping(path = "hello")
 public class HelloController {
     private final HelloService helloService;
     private final ModelMapper modelMapper;

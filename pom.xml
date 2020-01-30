@@ -61,6 +61,7 @@
 		</dependency>
 
 		<!--H2 in-memory DB-->
+		<!-- Change scope to test in most cases, running on a MySQL DB at runtime -->
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
