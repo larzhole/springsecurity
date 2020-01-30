@@ -40,7 +40,7 @@ public class FishServiceDefault implements FishService {
     @Override
     public void deleteFish(Long id) throws FishNotFoundException {
         final Fish existingFish = getById(id);
-        existingFish.setIsActive(false);
+//        existingFish.setIsActive(false);
         fishRepository.save(existingFish);
     }
 

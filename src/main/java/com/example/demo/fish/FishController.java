@@ -42,7 +42,7 @@ public class FishController {
     @PostMapping
     @DTO(FishDTO.class)
     public ResponseEntity addFish(@RequestBody FishDTO fishDTO) {
-        return ResponseEntity.ok(dtoToEntity(fishDTO));
+        return ResponseEntity.ok(fishService.addFish(dtoToEntity(fishDTO)));
     }
 
     @PutMapping(path = "{id}")

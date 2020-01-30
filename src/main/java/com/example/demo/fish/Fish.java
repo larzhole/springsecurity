@@ -19,7 +19,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "fish_reference")
 @Where(clause = "is_active = 1")
-public class Fish extends BaseEntity {
+public class Fish { // extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
