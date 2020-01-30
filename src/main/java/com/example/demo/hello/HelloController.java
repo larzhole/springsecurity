@@ -1,5 +1,6 @@
 package com.example.demo.hello;
 
+import com.example.demo.utilities.annotations.DTO;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -30,21 +31,25 @@ public class HelloController {
     }
 
     @GetMapping
+    @DTO(HelloDTO.class)
     public ResponseEntity getHellos() {
         return ResponseEntity.ok(helloService.getHellos());
     }
 
     @GetMapping(path = "{id}")
+    @DTO(HelloDTO.class)
     public ResponseEntity getHelloById(@PathVariable @NotNull Long id) throws HelloNotFoundException {
         return ResponseEntity.ok(helloService.getById(id));
     }
 
     @PostMapping
+    @DTO(HelloDTO.class)
     public ResponseEntity addHello(HelloDTO helloDTO) {
         return ResponseEntity.ok(helloService.addHello(dtoToEntity(helloDTO)));
     }
 
     @PutMapping(path = "{id}")
+    @DTO(HelloDTO.class)
     public ResponseEntity updateHello(@PathVariable Long id,
                                       @RequestBody HelloDTO helloDTO) throws HelloNotFoundException {
         helloService.updateHello(id, dtoToEntity(helloDTO));
@@ -52,6 +57,7 @@ public class HelloController {
     }
 
     @DeleteMapping(path = "{id}")
+    @DTO(HelloDTO.class)
     public ResponseEntity deleteHello(@PathVariable Long id) throws HelloNotFoundException {
         helloService.deleteHello(id);
         return ResponseEntity.noContent().build();
