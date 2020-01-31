@@ -22,7 +22,7 @@ import javax.servlet.http.HttpServletRequest;
 @Configuration
 public class LoggingAspect {
 
-    @Pointcut("@annotation(com.example.demo.utilities.annotations.Loggable")
+    @Pointcut("@annotation(com.example.demo.utilities.annotations.Loggable)")
     public void loggableMethod() {
         // Method is empty, this is just a Pointcut, implementations are in the Advices
     }
