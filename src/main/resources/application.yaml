@@ -9,3 +9,20 @@ spring:
 server:
   :servlet
     :context-path=/api/v1
+
+## LDAP
+ldap:
+  url: ${LDAP_URL:my-ldap-url.larzhole.com:389}
+  base:
+    dn: ${LDAP_BASE_DN:CN=UsersDC=larzhole,DC=com}
+  username: ${LDAP_USERNAME:my_ldap_account@larzhole.com}
+  password: ${LDAP_PASSWORD:F00tFungus!}
+  user:
+    dn:
+      pattern: ${LDAP_USER_DN_PATTERN:accountName={0}}
+
+## JWT
+jwt:
+  issuer: ${JWT_ISSUER:my_jwt_issuer}
+  algorithm: ${JWT_ALGORITHM:HMAC256}
+  secret: ${JWT_SECRET:MY_SECRET}
